@@ -1,0 +1,18 @@
+apiVersion: admiral.io/v1alpha1
+kind: GlobalTrafficPolicy
+metadata:
+  name: gtp-service-podinfo
+  namespace: webapp-eks
+  annotations:
+    admiral.io/env: stage
+  labels:
+    identity: backend
+spec:
+  policy:
+    - dnsPrefix: default
+      lbType: 1
+      target:
+        - region: ap-south-1
+          weight: 50
+        - region: westus
+          weight: 50

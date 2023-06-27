@@ -1,0 +1,10 @@
+apiVersion: admiral.io/v1alpha1
+kind: Dependency
+metadata:
+  name: dependency
+  namespace: admiral
+spec:
+  source: prometheus-eks
+  identityLabel: identity
+  destinations:
+    - prometheus-aks

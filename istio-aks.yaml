@@ -1,0 +1,16 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  values:
+    global:
+      meshID: mesh1
+      multiCluster:
+        clusterName: aks
+      network: aks
+  meshConfig:
+    defaultConfig:
+      proxyMetadata:
+        # Enable basic DNS proxying
+        ISTIO_META_DNS_CAPTURE: "true"
+        # Enable automatic address allocation
+        ISTIO_META_DNS_AUTO_ALLOCATE: "true"

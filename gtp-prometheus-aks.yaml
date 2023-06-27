@@ -1,0 +1,13 @@
+apiVersion: admiral.io/v1alpha1
+kind: GlobalTrafficPolicy
+metadata:
+  name: gtp-service-prometheus
+  namespace: istio-system
+  annotations:
+    admiral.io/env: aks
+  labels:
+    identity: prometheus-aks
+spec:
+  policy:
+    - dnsPrefix: default
+      lbType: 0
